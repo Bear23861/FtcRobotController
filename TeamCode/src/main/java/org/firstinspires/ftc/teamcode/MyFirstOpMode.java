@@ -1,4 +1,13 @@
 package org.firstinspires.ftc.teamcode;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+public class MyFirstOpMode extends OpMode{
+    @Override
+    public void init() {
 
-public class MyFirstOpMode {
+    }
+
+    @Override
+    public void loop() {
+        
+    }
 }
