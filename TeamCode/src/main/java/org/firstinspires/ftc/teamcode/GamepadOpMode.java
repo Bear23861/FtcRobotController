@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp()
 public class GamepadOpMode extends OpMode {
+
     @Override
     public  void init(){
 
@@ -29,5 +30,25 @@ public class GamepadOpMode extends OpMode {
 
         double sumTriggers = gamepad1.right_trigger + gamepad1.left_trigger;
         telemetry.addData("The sum of the triggers", sumTriggers);
+
+
+        ///exercise 4.6
+        boolean isPressedA1 = gamepad1.a;
+        double spdForward = gamepad1.left_stick_y;
+
+        if(!isPressedA1)
+            spdForward *= 0.5;
+        telemetry.addData("Forward speed", speedForward);
+
+
+        if(isPressedA1) {
+            telemetry.addData("Left X", gamepad1.left_stick_y);
+            telemetry.addData("Left Y", gamepad1.left_stick_x);
+        }
+        else
+        {
+            telemetry.addData("Left X", gamepad1.left_stick_x);
+            telemetry.addData("Left Y", gamepad1.left_stick_y);
+        }
     }
 }
